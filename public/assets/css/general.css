@@ -2,3 +2,14 @@
     padding-top: 25px;
     text-align: center;
 }
+.loading .fa-caret-square-o-right, .intro .fa-caret-square-o-right{
+    margin-left: 3px;
+    margin-right: -4px;
+}
+
+.navbar-brand{
+    background: transparent;
+    font-size: 20px;
+    line-height: 20px;
+    font-family: 'Source Sans Pro','Segoe UI','Droid Sans',Tahoma,Arial,sans-serif;
+}
