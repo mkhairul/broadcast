@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Avant</title>
+	<title>Broadcast</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Avant">
-	<meta name="author" content="The Red Team">
+	<meta name="description" content="Broadcast">
+	<meta name="author" content="mk">
 
     <!-- <link href="assets/less/styles.less" rel="stylesheet/less" media="all"> -->
     <link rel="stylesheet" href="assets/css/styles.min.css">
@@ -29,6 +29,7 @@
     <link rel='stylesheet' type='text/css' href='assets/plugins/form-markdown/css/bootstrap-markdown.min.css' />
     <link rel='stylesheet' type='text/css' href='assets/plugins/codeprettifier/prettify.css' />
     <link rel='stylesheet' type='text/css' href='assets/plugins/form-toggle/toggles.css' />
+		<link rel='stylesheet' type='text/css' href='assets/bootstrap-social-gh-pages/bootstrap-social.css' />
     <!-- <script type="text/javascript" src="assets/js/less.js"></script> -->
 </head>
 
@@ -110,7 +111,7 @@
         <a id="rightmenu-trigger" class="pull-right" data-toggle="tooltip" data-placement="bottom" title="Toggle Right Sidebar"></a>
 
         <div class="navbar-header pull-left">
-            <a class="navbar-brand" href="index.htm">Avant</a>
+            <a class="navbar-brand" href="index.htm">Broadcast</a>
         </div>
 
         <ul class="nav navbar-nav pull-right toolbar">
@@ -279,7 +280,7 @@
                     </form>
                 </li>
                 <li class="divider"></li>
-								<li><a href="#"><i class="fa fa-caret-square-o-right"></i> <span>Start</span></a></li>
+								<li><a href="#" id="start_broadcast"><i class="fa fa-caret-square-o-right"></i> <span>Start</span></a></li>
 								<li><a href="#"><i class="fa fa-video-camera"></i> <span>Create Channel</span></a></li>
                 <li class="hasChild open"><a href="javascript:;"><i class="fa fa-th"></i> <span>Channels</span> </a>
                     <ul class="acc-menu" style="display:block">
@@ -426,8 +427,6 @@
                     </div>
                 </div>
 
-
-
                 <div class="widget">
                     <div class="widget-heading">
                         <a href="javascript:;" data-toggle="collapse" data-target="#storagespace"><h4>Storage Space</h4></a>
@@ -473,15 +472,17 @@
 
     		<div id="page-content">
 		        <div id='wrap'>
-		            <div id="page-heading">
-		            </div>
-
-		            <div class="container">
+		            <div id="page-heading"></div>
+		            <div class="container main-container">
 		                <div class="row">
 		                    <div class="loading">
-		                        <h1>Loading <img src="assets/img/ajax-loader.gif" /></h1>
-		                        <p><strong>Tips:</strong> You can start recording on by pressing Start on the left menu</p>
+		                        <h1><span>Loading</span><img src="assets/img/ajax-loader.gif" /></h1>
+		                        <p><strong>Tips:</strong> You can start recording on by pressing <span class="fa fa-caret-square-o-right">&nbsp;</span> Start on the left menu</p>
 		                    </div>
+												<div class="intro hide">
+														<h2>There are no videos nearby</h2>
+														<h3>You can start recording on by pressing <span class="fa fa-caret-square-o-right">&nbsp;</span> Start on the left menu and share it on <a class="btn btn-social-icon btn-facebook"><i class="fa fa-facebook"></i></a></h3>
+												</div>
 		                </div>
 		            </div> <!-- container -->
 		        </div> <!--wrap -->
@@ -490,22 +491,13 @@
 		    <footer role="contentinfo">
 		        <div class="clearfix">
 		            <ul class="list-unstyled list-inline">
-		                <li>AVANT &copy; 2013</li>
+		                <li>Broadcast &copy; 2014</li>
 		                <!--li class="pull-right"><a href="javascript:;" id="back-to-top">Top <i class="fa fa-arrow-up"></i></a></li-->
 		                <button class="pull-right btn btn-inverse-alt btn-xs hidden-print" id="back-to-top" style="margin-top: -1px; text-transform: uppercase;"><i class="fa fa-arrow-up"></i></button>
 		            </ul>
 		        </div>
 		    </footer>
 		</div> <!-- page-container -->
-
-<!--
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-
-<script>!window.jQuery && document.write(unescape('%3Cscript src="assets/js/jquery-1.10.2.min.js"%3E%3C/script%3E'))</script>
-<script type="text/javascript">!window.jQuery.ui && document.write(unescape('%3Cscript src="assets/js/jqueryui-1.10.3.min.js'))</script>
--->
-
 <script type='text/javascript' src='assets/js/jquery-1.10.2.min.js'></script>
 <script type='text/javascript' src='assets/js/jqueryui-1.10.3.min.js'></script>
 <script type='text/javascript' src='assets/js/bootstrap.min.js'></script>
@@ -526,6 +518,13 @@
 <script type='text/javascript' src='assets/js/placeholdr.js'></script>
 <script type='text/javascript' src='assets/js/application.js'></script>
 <script type='text/javascript' src='assets/demo/demo.js'></script>
-
+<script type='text/javascript' src='assets/pubsub.js'></script>
+<script type='text/javascript' src='assets/adapter.js'></script>
+<script type='text/javascript' src='assets/janus.js'></script>
+<script type='text/javascript' src='assets/broadcast.js'></script>
+<script type='text/javascript'>
+	var broadcast = service.broadcast();
+	broadcast.mainpageInit();
+</script>
 </body>
 </html>
