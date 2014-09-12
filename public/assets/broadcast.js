@@ -110,6 +110,7 @@
             attachMediaStream($("#"+self.room).get(0), stream);
             self.hideLoading();
             $("#"+self.room).get(0).muted = "muted";
+            $(self.options.startBroadcastEl + ' span').html('Stop');
         }
 
         broadcastConstructor.prototype.publishFeed = function(pluginHandle){

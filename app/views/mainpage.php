@@ -523,7 +523,7 @@
 <script type='text/javascript' src='assets/janus.js'></script>
 <script type='text/javascript' src='assets/broadcast.js'></script>
 <script type='text/javascript'>
-	var broadcast = service.broadcast();
+	var broadcast = service.broadcast({ gatewayServer: 'http://' + window.location.hostname + ':7781/janus' });
 	broadcast.mainpageInit();
 </script>
 </body>
